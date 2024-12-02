@@ -1,0 +1,20 @@
+package looping;
+
+public class Day9 {
+	
+
+	public static void main(String[] args) {
+		
+		 	for(int i=2; i<=50; i+=2) {
+		 		
+		 	System.out.println("value of i is " + i);
+		 	
+		 	}
+		 
+		 for(int j=5; j<=100; j+=5) {
+		 		
+			 	System.out.println("value of j is " + j);
+			 	}
+			 	
+		 }
+	}
