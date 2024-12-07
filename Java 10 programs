@@ -1,0 +1,146 @@
+
+package looping;
+
+import java.util.Scanner;
+
+
+public class activity890 {
+// 1.find whether the person is senior citizen or not
+
+	public static void main(String[] args) {
+		Scanner scanner =  new Scanner(System.in);
+		
+		senior citizen
+	System.out.println("enter the age : ");
+	int age = scanner.nextInt();
+	
+	
+	if(age<60) {
+		System.out.println("Person is not a senior citizen");
+	}
+	
+	else {
+		System.out.println("Person is a senior citizen");
+	}
+	
+//	2. printing guvi
+
+	System.out.println("How many times you want to print the sentence ");
+    int n = scanner.nextInt();
+	
+	String s = "welcome to guvi";
+	for(int i=1;i<=n;i++) 
+	{
+		
+	System.out.println(s);
+	}
+	
+	// 3.printing number of digits in integer
+
+	 System.out.println("Enter the number: ");
+	    int j = scanner.nextInt();
+	    int count = 0;
+	    
+	    while(j>0)
+	    {
+	    	
+	    	j= j/10;
+	    	count++; 
+	    	}
+	    System.out.println(count);
+
+ // 4. prime number
+
+	System.out.println("Enter the number: ");
+Scanner scanner = new Scanner(System.in);
+	int m = scanner.nextInt();
+	boolean prime = true;
+		
+	for(int i=2; i<m; i++) {
+		
+		if(m%i==0) {
+			 	prime = false;
+			 	break;
+		}
+	}
+	System.out.println(prime);
+	
+	//5. factorial number
+System.out.println("enter the number: ");
+int b = scanner.nextInt();
+int fact =b;
+
+for(int i =1; i<b; i++) {
+	
+	fact = fact* i;
+	
+}
+System.out.println(fact);
+
+//6. length of given string
+
+System.out.println("Enter the word : ");
+ String a= scanner.nextLine();
+String b = a;
+ 
+ System.out.println(a.length());
+
+
+  //7. finding sum of greatest number
+ System.out.println("Enter value for a and b ");
+ System.out.println("Enter value for c and d ");
+ 
+ int a =  scanner.nextInt();
+ int b =  scanner.nextInt();
+ int c =  scanner.nextInt();
+ int d =  scanner.nextInt();
+int i= a+b;
+int j= c+d;
+    if (i>j){
+	 
+	System.out.println("sum of a and b is greater than sum of c and d " + i );
+	 
+ }
+    else { 
+ System.out.println("Sum of c and d is greater " + j);
+
+	 scanner.close();
+ }
+
+// 8. Even number or not
+System.out.println(" Enter the number : ");
+int a = scanner.nextInt();
+int n=a;
+if(n%2==0) {
+
+System.out.println("Given number is even number " + n);
+}
+else {
+	System.out.println("Not an even number");
+	scanner.close();
+}
+
+//9. printing a-z
+char a = scanner.nextLine();
+
+for(char a = 'A'; a<='Z';a++) {
+	System.out.print(a + " ");
+}
+
+//10. Swapping two numbers
+System.out.println("Enter any two numbers ");
+
+int i = scanner.nextInt();
+int j = scanner.nextInt();
+int temp =i;
+i=j;
+j=temp;
+System.out.println(" i= " + i);
+System.out.println(" j= " + j);
+
+scanner.close();
+}
+}
+
+
+
