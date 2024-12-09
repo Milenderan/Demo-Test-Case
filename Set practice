@@ -1,0 +1,49 @@
+package looping;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+public class Setpratice {
+
+	public static void main(String[] args) {
+		
+		Set<Integer> set1= new HashSet <Integer>();
+		set1.add(10);
+		set1.add(20);
+		set1.add(30);
+		set1.add(40);
+		set1.add(50);
+		
+		System.out.println(set1);
+		
+     	set1.add(35);
+		System.out.println(set1); // adding one number to the set
+		
+		set1.add(40);
+		System.out.println(set1); //no duplicates are allowed
+		
+		set1.remove(40); //removing the set
+		System.out.println(set1);
+		
+		
+		System.out.println(set1.size());// printing the size of set
+		
+		Set<Integer> set2= new LinkedHashSet <Integer>();
+		
+		set2.add(10);
+		set2.add(20);
+		set2.add(30);
+		set2.add(40);
+		set2.add(50);
+		
+		System.out.println(set2);  //printing the numbers in ascending order using linked hashset.
+		
+		
+		set2.removeAll(set2);
+		System.out.println(set2);  //removing all numbers from the set2
+		
+for(Integer integer : set2) {
+	System.out.println(integer);  //iterating thru for loop
+}
+		
+	}
+}
