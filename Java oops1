@@ -1,0 +1,258 @@
+
+
+//2. Employee acc
+package excercise;
+
+public class Employee 
+{
+
+	    private int id;
+	    private String firstName;
+	    private String lastName;
+	    private int salary;
+
+	   
+	    public Employee(int id, String firstName, String lastName, int salary) 
+	    {
+	        this.id = id;
+	        this.firstName = firstName;
+	        this.lastName = lastName;
+	        this.salary = salary;
+	    }
+
+	  
+	    public int getID() 
+	    {
+	        return id;
+	    }
+
+	  
+	    public String getFirstName() 
+	    {
+	        return firstName;
+	    }
+
+	
+	    public String getLastName()
+	    {
+	        return lastName;
+	    }
+
+	    
+	    public String getName() 
+	    {
+	        return firstName + " " + lastName;
+	    }
+
+	  
+	    public int getSalary() 
+	    {
+	        return salary;
+	    }
+
+	    
+	    public void setSalary(int salary) {
+	        this.salary = salary;
+	    }
+
+	    
+	    public int getAnnualSalary() 
+	    {
+	        return salary * 12;
+	    }
+
+	
+	    public int raiseSalary(int percent) 
+	    {
+	        this.salary += (salary * percent) / 100;
+	        return this.salary;
+	    }
+
+	
+	    
+	    public String toString() 
+	    {
+	        return "Employee[id=" + id + ", name=" + getName() + ", salary=" + salary + "]";
+	    }
+
+	 
+	    public static void main(String[] args) 
+	    {
+	      
+	        Employee emp = new Employee(363, "vicky", "vp", 20000);
+
+	      
+	        System.out.println(emp.toString());
+
+	       
+	        System.out.println("ID: " + emp.getID());
+	        System.out.println("First Name: " + emp.getFirstName());
+	        System.out.println("Last Name: " + emp.getLastName());
+	        System.out.println("Full Name: " + emp.getName());
+	        System.out.println("Salary: " + emp.getSalary());
+	        System.out.println("Annual Salary: " + emp.getAnnualSalary());
+
+	       
+	        emp.raiseSalary(10);
+	        System.out.println("After 10% raise, New Salary: " + emp.getSalary());
+
+	       
+	        System.out.println(emp.toString());
+	    }
+	}
+
+// 3.circle program
+package excercise;
+
+public class Circle 
+	{
+	   
+	    private double radius;
+
+	   
+	    public Circle() 
+	    {
+	        this.radius = 1.0;
+	    }
+
+	    
+	    public Circle(double radius)
+	    {
+	        this.radius = radius;
+	    }
+
+	    
+	    public double calculateCircumference()
+	    {
+	        return 2 * Math.PI * radius; 
+	    }
+
+	  
+	    public double getRadius() 
+	    {
+	        return radius;
+	    }
+
+	    
+	    public void setRadius(double radius)
+	    {
+	        this.radius = radius;
+	    }
+
+	   
+	 
+	    public String toString() 
+	    {
+	        return "Circle[radius=" + radius + "]";
+	    }
+
+	   
+	    public static void main(String[] args)
+	    {
+	        
+	        Circle circle1 = new Circle();
+	        System.out.println("Default Circle: " + circle1);
+	        System.out.println("Circumference: " + circle1.calculateCircumference());
+
+	        
+	        Circle circle2 = new Circle(7.5);
+	        System.out.println("Circle with radius 7.5: " + circle2);
+	        System.out.println("Circumference: " + circle2.calculateCircumference());
+
+	    
+	        circle2.setRadius(10.0);
+	        System.out.println("Updated Circle: " + circle2);
+	        System.out.println("Updated Circumference: " + circle2.calculateCircumference());
+	    }
+	}
+
+4.Bank Account
+
+package excercise;
+
+public class Account 
+{
+    
+    private int accNumber;
+    private double balance;
+
+    
+    public Account() 
+    {
+        this.accNumber = 0;
+        this.balance = 0.0;
+    }
+
+    
+    public Account(int accNumber, double balance)
+    {
+        this.accNumber = accNumber;
+        this.balance = balance;
+    }
+
+    
+    public void deposit(double amount) 
+    {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Successfully deposited: Rupees " + amount);
+        } else {
+            System.out.println("Deposit amount must be positive.");
+        }
+    }
+
+    
+    public void withdraw(double amount) 
+    {
+        if (amount > 0 && amount <= balance) 
+        {
+            balance -= amount;
+            System.out.println("Successfully withdrawn: Rupees " + amount);
+        } else if (amount > balance) 
+        {
+            System.out.println("Insufficient balance for withdrawal.");
+        } else 
+        {
+            System.out.println("Withdrawal amount must be positive.");
+        }
+    }
+
+   
+    public double checkBalance() 
+    {
+        return balance;
+    }
+
+    
+    
+    public String toString() 
+    {
+        return "Account[Account Number=" + accNumber + ", Balance= Rupees " + balance + "]";
+    }
+
+   
+    public static void main(String[] args) {
+        
+        Account account1 = new Account();
+        System.out.println("Default Account: " + account1);
+        account1.deposit(500);
+        account1.withdraw(200);
+        System.out.println("Balance after transactions: Rupees " + account1.checkBalance());
+
+        System.out.println("-----------------------------");
+
+       
+        Account account2 = new Account(12345, 1000.0);
+        System.out.println("New Account: " + account2);
+        account2.deposit(300);
+        account2.withdraw(500);
+        account2.withdraw(2000); // Attempting to withdraw more than balance
+        System.out.println("Final Balance:  Rupees " + account2.checkBalance());
+    }
+}
+
+
+
+
+
+
