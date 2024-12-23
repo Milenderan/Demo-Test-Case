@@ -1,0 +1,214 @@
+//1. Perfoming Division
+
+package studio.org;
+import java.util.Scanner;
+
+	public class prg1 {
+	    public static void main(String[] args) {
+	
+	        Scanner scanner = new Scanner(System.in);
+
+	        try {
+	           
+	            System.out.print("Enter the first integer (numerator): ");
+	            int numerator = scanner.nextInt();
+
+	           
+	            System.out.print("Enter the second integer (denominator): ");
+	            int denominator = scanner.nextInt();
+
+	            
+	            int result = numerator / denominator;
+	            System.out.println("Result: " + result);
+	        } 
+	        catch (ArithmeticException e) {
+	            
+	            System.out.println("Error: Division by zero is not allowed.");
+	        } 
+	        catch (Exception e) {
+	           
+	            System.out.println("Error: Invalid input. Please enter integers only.");
+	        } 
+	       
+	    }
+	}
+
+//2. ArrayIndexOut of Bounds
+package studio.org;
+
+public class Demo {
+    public static void main(String[] args) {
+       
+        int[] numbers = {1, 2, 3, 4, 5}; 
+        try {
+            System.out.println("Accessing index 10 in the array:");
+            System.out.println(numbers[10]); 
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array index is out of bounds!");
+        }
+
+        System.out.println("-------------");
+
+       
+        String name = "Hello"; 
+        try {
+            System.out.println("Accessing character at index 10 in the string:");
+            System.out.println(name.charAt(10)); 
+        } catch (StringIndexOutOfBoundsException e) {
+            System.out.println("String index is out of bounds!");
+        }
+
+
+    }
+}
+
+// 3. Invalid Age Exception
+package studio.org;
+
+class InvalidAgeException extends Exception {
+
+ public InvalidAgeException(String message) {
+     super(message);
+ }
+}
+
+public class Invalid {
+ public static void main(String[] args) {
+     java.util.Scanner scanner = new java.util.Scanner(System.in); 
+
+     try {
+   
+         System.out.print("Enter your age: ");
+         int age = scanner.nextInt();
+
+         
+         if (age < 18) {
+            
+             throw new InvalidAgeException("You must be 18 or older to proceed.");
+         }
+
+        
+         System.out.println("Age accepted. You are eligible!");
+
+     } catch (InvalidAgeException e) {
+        
+         System.out.println("Error: " + e.getMessage());
+     } catch (Exception e) {
+        
+         System.out.println("Error: Please enter a valid number for age.");
+     } 
+ }
+ }
+
+// 4. FileNotFoundException
+package studio.org;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Read {
+    public static void main(String[] args) {
+        Scanner fileReader = null;
+
+        try {
+           
+            File file = new File("data.txt"); 
+
+           
+            fileReader = new Scanner(file);
+            System.out.println("Reading file content:\n");
+
+            
+            while (fileReader.hasNextLine()) {
+                String line = fileReader.nextLine();
+                System.out.println(line);
+            }
+
+        } catch (FileNotFoundException e) {
+           
+            System.out.println("Error: File not found! Please make sure the file exists.");
+        } catch (Exception e) {
+           
+            System.out.println("An unexpected error occurred: " + e.getMessage());
+        } 
+        }
+    }
+
+//5. RemoveAll the elements from Arraylist
+
+package studio.org;
+
+import java.util.ArrayList;
+
+public class RemoveAll {
+    public static void main(String[] args) {
+       
+        ArrayList<String> list = new ArrayList<>();
+
+      
+        list.add("Kiwi");
+        list.add("orange");
+        list.add("Mango");
+        list.add("pomogrenate");
+
+       
+        System.out.println("ArrayList before removing elements: " + list);
+        list.clear();
+
+        System.out.println("ArrayList after removing all elements: " + list);
+    }
+}
+
+// 6. TreeMap of Employees
+package studio.org;
+
+import java.util.TreeMap;
+
+public class Employee {
+    public static void main(String[] args) {
+       
+        TreeMap<Integer, String> employees = new TreeMap<>();
+
+      
+        employees.put(23, "Vicky");
+        employees.put(42, "milen");
+        employees.put(12, "Rakesh");
+        employees.put(24, "Abishek");
+
+       
+        System.out.println("Employee names in alphabetical order:");
+        for (String name : employees.values()) {
+            System.out.println(name);
+        }
+    }
+}
+
+//7. Converting list to array
+package studio.org;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class List2 {
+    public static void main(String[] args) {
+        
+        List<String> list = new ArrayList<>();
+        list.add("Kiwi");
+        list.add("orange");
+        list.add("mango");
+        list.add("badam");
+
+        
+        String[] array = list.toArray(new String[0]);
+
+       
+        System.out.println("Array elements:");
+        for (String fruit : array) {
+            System.out.println(fruit);
+        }
+    }
+}
+
+
+
