@@ -1,0 +1,103 @@
+5. Read data from excel
+package welcome;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelA {
+
+	public static void main(String[] args) throws IOException {
+		// create a new file
+		File f = new File("D:\\Guvi\\Demo\\Excel\\Book1.xlsx"); 
+		
+		//getting into the file
+		FileInputStream fin = new FileInputStream(f); 
+		
+		//creating a workbook
+		Workbook w = new XSSFWorkbook(fin); 
+		
+		// getting into workbook
+		Sheet s = w.getSheet("sheet1"); 
+		
+		//getting into the row
+		Row r = s.getRow(2); 
+		
+		//getting into the cell
+		Cell c = r.getCell(0); 
+		System.out.println("the value from the excel (2,0) is " + c );
+		
+		int rows = s.getPhysicalNumberOfRows();
+		System.out.println("Number of rows : " + rows);
+		
+		int cells = r.getPhysicalNumberOfCells();
+		System.out.println("Number of cells : " + cells);
+	}
+	
+	
+}
+
+1,2,3. Write data to an excel file
+
+package welcome;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelB {
+
+	public static void main(String[] args) throws IOException {
+		
+		// create a new file
+				File f = new File("D:\\Guvi\\Demo\\Excel\\Book1.xlsx"); 
+				
+				//getting into the file
+				FileInputStream fin = new FileInputStream(f); 
+				
+				//creating a workbook
+				Workbook w = new XSSFWorkbook(fin); 
+				
+		    Sheet createSheet = w.getSheet("Test");
+					      //createSheet("Test");
+				
+				 String[][] data = {
+						    {"Name", "Age", "Email"},
+			                {"John Doe", "30", "john@test.com"},
+			                {"Jane Doe", "28", "jane@test.com"},
+			                {"Bob Smith", "35", "jacky@example.com"},
+			                {"Swapnil", "37", "swapnil@example.com"},
+			    }
+
+					for(int i=0; i<data.length; i++) {
+					 Row row =   createSheet.createRow(i);
+					
+					for(int j=0; j<data[0].length; j++) {
+						
+					    Cell cell = row.createCell(j);
+						cell.setCellValue(data[i][j]);
+						
+					}
+				}
+				
+		  	FileOutputStream fout = new FileOutputStream(f);
+				
+				w.write(fout);
+				
+				System.out.println("Writing in Excel is done ");
+					
+	}
+}
