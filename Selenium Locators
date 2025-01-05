@@ -1,0 +1,77 @@
+package welcome;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+public class Windows {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriverManager.chromedriver().setup();
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+    driver.get("http://google.com");
+
+    driver.getCurrentUrl();
+		driver.navigate().refresh();
+		driver.close();
+}
+
+Program 2 
+public static void main(String[] args) throws InterruptedException {
+		
+		WebDriverManager.chromedriver().setup();
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+
+    driver.get("https://www.demoblaze.com/");
+
+if(pageTitle == pageTitle) {
+		System.out.println("Page landed on correct website");
+}
+		else {
+			System.out.println("Page not landed on correct website");
+	}
+
+		driver.close();
+}
+
+Program 3
+
+public static void main(String[] args) throws InterruptedException {
+		
+		WebDriverManager.chromedriver().setup();
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+
+    driver.get("https://www.wikipedia.org/");
+    Thread.sleep(2000);
+		
+		WebElement searchInput = driver.findElement(By.xpath("//input[@id='searchInput']"));
+		searchInput.sendKeys("Artificial Intelligence");
+		System.out.println("hello " + searchInput.getText());
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//h3[text()='Artificial intelligence']")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.linkText("History")).click();
+    driver.getTitle();
+    System.out.println("the title of the page is :" + driver.getTitle());
+
+		driver.close();
+}
